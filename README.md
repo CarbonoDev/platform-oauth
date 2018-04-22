@@ -1,0 +1,1 @@
+After installation change Authentication middleware to `Illuminate\Auth\Middleware\Authenticate`

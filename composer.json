@@ -1,0 +1,36 @@
+{
+    "name": "carbonodev/oauth",
+    "type": "platform-extension",
+    "description": "Enables oauth support via passport",
+    "authors": [
+        {
+            "name": "Carbono Dev",
+            "email": "dev@carbonodev.com"
+        }
+    ],
+    "repositories": [
+        { "type": "composer", "url": "https://packages.cartalyst.com" }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "cartalyst/composer-installers": "~2.0",
+        "illuminate/support": "~5.0",
+        "platform/foundation": "~7.0",
+        "laravel/passport": "~4.0",
+        "spatie/laravel-cors": "^1.2"
+    },
+    "autoload": {
+        "classmap": [
+            "resources/database/migrations",
+			"resources/database/seeds"
+        ],
+        "psr-4": {
+            "Carbonodev\\Oauth\\": "src/"
+        }
+    },
+    "extra": {
+        "component": "extension"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
