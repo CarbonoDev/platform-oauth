@@ -1,7 +1,6 @@
 <?php
 
 use Laravel\Passport\Passport;
-use Illuminate\Support\Facades\Artisan;
 use Cartalyst\Extensions\Extension;
 use Laravel\Passport\Console\InstallCommand;
 use Laravel\Passport\Console\KeysCommand;
@@ -22,7 +21,8 @@ Extension::installed(
                     $artisan->resolveCommands([KeysCommand::class]);
                 }
             );
-            Artisan::call('passport:keys');
+            app('Illuminate\Contracts\Console\Kernel')->call('migrate', ['--path' => 'vendor/laravel/passport/database/migrations']);
+            app('Illuminate\Contracts\Console\Kernel')->call('passport:keys');
         }
     }
 );
@@ -36,9 +36,8 @@ Extension::enabled(
                     $artisan->resolveCommands([ClientCommand::class]);
                 }
             );
-
-            Artisan::call('passport:client', ['--personal' => true, '--name' => config('app.name') . ' Personal Access Client']);
-            Artisan::call('passport:client', ['--password' => true, '--name' => config('app.name') . ' Password Grant Client']);
+            app('Illuminate\Contracts\Console\Kernel')->call('passport:client', ['--personal' => true, '--name' => config('app.name') . ' Personal Access Client']);
+            app('Illuminate\Contracts\Console\Kernel')->call('passport:client', ['--password' => true, '--name' => config('app.name') . ' Password Grant Client']);
         }
     }
 );
