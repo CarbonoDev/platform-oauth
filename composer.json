@@ -1,5 +1,5 @@
 {
-    "name": "carbonodev/oauth",
+    "name": "carbonodev/platform-oauth",
     "type": "platform-extension",
     "description": "Enables oauth support via passport",
     "authors": [
