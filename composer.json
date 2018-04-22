@@ -19,6 +19,7 @@
         "laravel/passport": "~4.0",
         "spatie/laravel-cors": "^1.2"
     },
+    "license": "MIT",
     "autoload": {
         "classmap": [
             "resources/database/migrations",
